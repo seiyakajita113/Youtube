@@ -19,46 +19,58 @@
     <nav>
         <ul>
             <div class="btn">
-                <li id="doplay">再生</li>
-                <!-- 再生ボタン -->
-                <li id="dostop">停止</li>
-                <!-- 停止ボタン -->
-                <li id="dopause">一時停止</li>
-                <!-- 一時停止ボタン -->
-                <li id="mute">ミュート</li>
-                <!-- ミュートボタン -->
-                <li id="do10sNext">10秒先へ</li>
-                <li id="do10sPrev">10秒戻る</li>
-                <li>
+                <div class="btnflex">
+                    <li id="doplay">再生</li>
+                    <!-- 再生ボタン -->
+                    <li id="dostop">停止</li>
+                    <!-- 停止ボタン -->
+                    <li id="dopause">一時停止</li>
+                    <!-- 一時停止ボタン -->
+                </div>
+                <div class="btnflex">
+                    <li id="mute">ミュート</li>
+                    <!-- ミュートボタン -->
+                    <li id="do10sNext">10秒先へ</li>
+                    <li id="do10sPrev">10秒戻る</li>
+                    <li>
+                </div>
             </div>
-            <select id="MovieId" class="ytMovie" name="ytMovie">
-                <option selected>選択してください。</option>
-                <option value="7mYWtWD8gfg">
-                    Rinku Konishi's "LENZ III" Tightbooth Part</option>
-                <option value="mSh9EC37STU">Kotora Mitani's "LENZ III" Tightbooth Part</option>
-                <option value="EWhNG1K5YRQ">Ryuhei Kitazume's "LENZ III" Tightbooth Part</option>
-                <option value="ZuRlaqFf2yE">Ayahiro Uratsuka's "LENZ III" Tightbooth Part</option>
-            </select>
-            </li>
-            <li>
-                <form id="doSpeed">
-                    <input type="radio" id="mslow" name="speed" value="0.25" />
-                    <label for="mslow">0.25</label>
-                    <input type="radio" id="slow" name="speed" value="0.5" />
-                    <label for="slow">0.5</label>
-                    <input type="radio" id="normal" name="speed" value="1.0" checked />
-                    <label for="normal">1</label>
-                    <input type="radio" id="hspeed" name="speed" value="1.5" />
-                    <label for="hspeed">1.5</label>
-                    <input type="radio" id="mhspeed" name="speed" value="2" />
-                    <label for="mhspeed">2</label>
-                </form>
-            </li>
+            <div class="box">
+                <select id="MovieId" class="ytMovie" name="ytMovie">
+                    <option selected>選択してください。</option>
+                    <option value="7mYWtWD8gfg">
+                        Rinku Konishi's "LENZ III" Tightbooth Part</option>
+                    <option value="mSh9EC37STU">Kotora Mitani's "LENZ III" Tightbooth Part</option>
+                    <option value="EWhNG1K5YRQ">Ryuhei Kitazume's "LENZ III" Tightbooth Part</option>
+                    <option value="ZuRlaqFf2yE">Ayahiro Uratsuka's "LENZ III" Tightbooth Part</option>
+                </select>
+                </li>
+                <li>
+                    <form id="doSpeed">
+                        <input type="radio" id="mslow" name="speed" value="0.25" />
+                        <label for="mslow">0.25</label>
+                        <input type="radio" id="slow" name="speed" value="0.5" />
+                        <label for="slow">0.5</label>
+                        <input type="radio" id="normal" name="speed" value="1.0" checked />
+                        <label for="normal">1</label>
+                        <input type="radio" id="hspeed" name="speed" value="1.5" />
+                        <label for="hspeed">1.5</label>
+                        <input type="radio" id="mhspeed" name="speed" value="2" />
+                        <label for="mhspeed">2</label>
+                    </form>
+                </li>
         </ul>
-        <label>ボリューム<input type="range" min="0" max="100" name="volume" id="volume" value="50" />
-            <span id="volumeNum"></span>
-        </label>
+        <div class="box">
+            <label>ボリューム<input type="range" min="0" max="100" name="volume" id="volume" value="50" />
+                <span id="volumeNum"></span>
+
+
+            </label>
+        </div>
+
+
     </nav>
+    </div>
     <script>
         // 2. This code loads the IFrame Player API code asynchronously.
         // 2. 変数tagにscriptタグを作って入れる。Element=要素、Attrubute=属性
@@ -80,8 +92,8 @@
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player("player", {
-                height: "360",
-                width: "640",
+                height: "600",
+                width: "700",
                 videoId: youtubeId,
                 playerVars: {
                     playsinline: 1,
